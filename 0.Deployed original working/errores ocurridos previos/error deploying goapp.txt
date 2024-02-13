@@ -1,0 +1,60 @@
+File upload done.
+Updating service [default]...failed.
+ERROR: (gcloud.app.deploy) Error Response: [9] Cloud build 1c3d432a-11e6-4d71-8c39-6e46196209e1 status: FAILURE.
+Build error details: go build: cannot use -o with multiple packages
+.
+Check the build log for errors: https://console.cloud.google.com/gcr/builds/1c3d432a-11e6-4d71-8c39-6e46196209e1?project=420703798813
+
+
+
+
+builder
+gcr.io/gae-runtimes/go111_app_builder:go111_1_11_2_20181111_RC00 — --name=us.gcr.io/pruebaadnenergetico/app-engine-tmp/app/ttl-2h:bc8d554e-f3b5-4e22-8582-8e8883078703 --directory=/workspace --destination=/srv --base=gcr.io/gae-runtimes/go111:go111_1_11_2_20181111_RC00
+
+
+Registros
+starting build "1c3d432a-11e6-4d71-8c39-6e46196209e1"
+
+FETCHSOURCE
+BUILD
+Starting Step #0 - "fetcher"
+Step #0 - "fetcher": Already have image (with digest): gcr.io/cloud-builders/gcs-fetcher
+Step #0 - "fetcher": Fetching manifest gs://staging.pruebaadnenergetico.appspot.com/ae/bc8d554e-f3b5-4e22-8582-8e8883078703/manifest.json.
+Step #0 - "fetcher": Processing 181 files.
+Step #0 - "fetcher": ******************************************************
+Step #0 - "fetcher": Status: SUCCESS
+Step #0 - "fetcher": Started: 2018-12-02T17:34:27Z
+Step #0 - "fetcher": Completed: 2018-12-02T17:34:29Z
+Step #0 - "fetcher": Requested workers: 200
+Step #0 - "fetcher": Actual workers: 181
+Step #0 - "fetcher": Total files: 181
+Step #0 - "fetcher": Total retries: 66
+Step #0 - "fetcher": GCS timeouts: 66
+Step #0 - "fetcher": MiB downloaded: 1.62 MiB
+Step #0 - "fetcher": MiB/s throughput: 0.95 MiB/s
+Step #0 - "fetcher": Time for manifest: 762.45 ms
+Step #0 - "fetcher": Total time: 2.47 s
+Step #0 - "fetcher": ******************************************************
+Finished Step #0 - "fetcher"
+Starting Step #1 - "builder"
+Step #1 - "builder": Pulling image: gcr.io/gae-runtimes/go111_app_builder:go111_1_11_2_20181111_RC00
+Step #1 - "builder": go111_1_11_2_20181111_RC00: Pulling from gae-runtimes/go111_app_builder
+Step #1 - "builder": Digest: sha256:51fb36bfa16e7013356867c3a3972986084df93e56258fc258579a5799f0436e
+Step #1 - "builder": Status: Downloaded newer image for gcr.io/gae-runtimes/go111_app_builder:go111_1_11_2_20181111_RC00
+Step #1 - "builder": 2018/12/02 17:34:31 Copying /workspace/_gopath/src/github.com to /tmp/staging292405385/srv/gopath/src/github.com
+Step #1 - "builder": 2018/12/02 17:34:32 Copying /workspace/_gopath/src/golang.org to /tmp/staging292405385/srv/gopath/src/golang.org
+Step #1 - "builder": 2018/12/02 17:34:32 Copying /workspace/_gopath/src/google.golang.org to /tmp/staging292405385/srv/gopath/src/google.golang.org
+Step #1 - "builder": 2018/12/02 17:34:32 Your app is not on your GOPATH, this build may fail.
+Step #1 - "builder": 2018/12/02 17:34:32 Building from Go source in /tmp/staging292405385/srv, with main package at ./...
+Step #1 - "builder": 2018/12/02 17:34:32 Building /tmp/staging292405385/srv, saving to /tmp/staging292405385/usr/local/bin/start
+Step #1 - "builder": 2018/12/02 17:34:33 Wrote build output to /builder/outputs/output
+Step #1 - "builder": 2018/12/02 17:34:33 Failed to build app: Your app is not on your GOPATH, please move it there and try again.
+
+
+GOPATH=/go GOPATH=/tmp/staging292405385/srv/gopath
+
+
+Step #1 - "builder": building app with command '[go build -o /tmp/staging292405385/usr/local/bin/start ./...]', env '[PATH=/go/bin:/usr/local/go/bin:/builder/google-cloud-sdk/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin HOSTNAME=36d96821b540 HOME=/builder/home BUILDER_OUTPUT=/builder/outputs DEBIAN_FRONTEND=noninteractive GOROOT=/usr/local/go/ GOPATH=/go GOPATH=/tmp/staging292405385/srv/gopath]': err=exit status 1, out=go build: cannot use -o with multiple packages
+Finished Step #1 - "builder"
+ERROR
+ERROR: build step 1 "gcr.io/gae-runtimes/go111_app_builder:go111_1_11_2_20181111_RC00" failed: exit status 1
